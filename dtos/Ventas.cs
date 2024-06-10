@@ -29,7 +29,7 @@ namespace ex3ºRecuperacionC_.dtos
                     "………\n",
                     "Venta numero: ", id,"\n",
                     "Euros: ", importe, "\n",
-                    "Fecha de compra: ", fechaString, "\n"
+                    "Instante de compra: ", fechaString, "\n"
 
                     );
 

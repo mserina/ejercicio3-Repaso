@@ -16,7 +16,7 @@ namespace ex3ºRecuperacionC_.utiles
 
         public static string nombreFicheroLog()
         {
-            string nombre = "C:\\Users\\csi23-mserina\\Desktop\\FICHEROS\\log-";
+            string nombre = "C:\\Users\\Usuario\\Desktop\\ARCHIVOS\\log-";
             DateTime fecha = DateTime.Now;
             string fechaString = fecha.ToString("ddMMyyyy");
             string rutaLog = string.Concat(nombre, fechaString, ".txt");

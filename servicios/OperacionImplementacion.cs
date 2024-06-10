@@ -17,7 +17,7 @@ namespace ex3ºRecuperacionC_.servicios
         {
             Ventas venta = new Ventas();
             Console.WriteLine("Inserte el importe");
-            venta.Importe = Convert.ToInt32(Console.ReadLine);
+            venta.Importe = Convert.ToInt32(Console.ReadLine());
             venta.Id = utiles.Utiles.idGenerator();
 
             Program.listaVentas.Add(venta);
@@ -25,7 +25,7 @@ namespace ex3ºRecuperacionC_.servicios
             foreach (Ventas ventas in Program.listaVentas)
             {
                 Console.WriteLine(" ");
-                Console.WriteLine(venta.ToString);
+                Console.WriteLine(venta.ToString());
                 Console.WriteLine(" ");
             }
         }
@@ -33,25 +33,26 @@ namespace ex3ºRecuperacionC_.servicios
        
         public void crearPedido()
         {
-            Productos producto = new Productos();
-            string respuesta;
+            Productos producto;
+            string respuesta = "";
             bool cerrarBucle = false;
 
             do
             {
+                producto = new Productos();
                 Console.WriteLine("Inserte el nombre del producto");
                 producto.NombreProducto = Console.ReadLine();
                 Console.WriteLine("Inserte la cantidad del prodcuto");
-                producto.Cantidad = Convert.ToInt32(Console.ReadLine);
+                producto.Cantidad = Convert.ToInt32(Console.ReadLine());
                 Console.WriteLine("Inserte la fecha de entrega");
-                producto.Fecha = Convert.ToDateTime(Console.ReadLine);
+                producto.Fecha = Convert.ToDateTime(Console.ReadLine());
 
                 Program.listaProducto.Add(producto);
 
                 Console.WriteLine("Desea insertar mas pedidos s/n");
                 respuesta = Console.ReadLine();
 
-                if (respuesta.Equals("s"))
+                if (respuesta.Equals("n"))
                 {
                     cerrarBucle = true;
                 }
@@ -61,14 +62,32 @@ namespace ex3ºRecuperacionC_.servicios
             foreach (Productos productos in Program.listaProducto)
             {
                 Console.WriteLine(" ");
-                Console.WriteLine(producto.ToString);
+                Console.WriteLine(productos.ToString());
                 Console.WriteLine(" ");
             }
         }
 
         public void calculoTotalVentas()
         {
+            Console.WriteLine("Inserte fecha de las ventas dd-MM-yyyy.");
+            DateTime fecha = Convert.ToDateTime(Console.ReadLine());
+            int importeTotal = 0;
+            DateTime fechaInicio = new DateTime();
+            DateTime fechaFin = new DateTime();
 
+            foreach (Ventas venta in Program.listaVentas)
+            {
+                if (venta.FechaVenta.Date == fecha.Date)
+                {
+                    importeTotal += venta.Importe;
+                    fechaInicio = Program.listaVentas[0].FechaVenta;
+                    fechaFin = Program.listaVentas[Program.listaVentas.Count - 1].FechaVenta;
+                }
+            }
+
+            TimeSpan fechaIntervalo = fechaFin - fechaInicio;
+
+            Console.WriteLine(String.Concat("Total ventas: ", importeTotal, "euros","\n","Tiempo transcurrido: ", fechaIntervalo.Hours,"horas ",fechaIntervalo.Minutes,"minutos y ", fechaIntervalo.Seconds, "segundos"));
         }
 
         public void mostrarVentas()

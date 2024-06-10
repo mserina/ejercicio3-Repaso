@@ -27,8 +27,9 @@ namespace ex3ºRecuperacionC_.dtos
         override
         public string ToString()
         {
+            string fechaString = Fecha.ToString("dd-MM-yyyy");
             string texto = 
-               string.Concat("Producto: ", nombreProducto, "\n", "Cantidad: ", cantidad,"\n", "Fecha entrega: ", fechaEntrega);
+               string.Concat("Producto: ", nombreProducto, "\n", "Cantidad: ", cantidad,"\n", "Fecha entrega: ", fechaString);
             
             return texto;   
         }

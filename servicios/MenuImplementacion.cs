@@ -83,7 +83,7 @@ namespace ex3ºRecuperacionC_.servicios
                         case 1:
                             Program.texto = "Se ha seleccionado crear pedido para proveedores";
                             utiles.Utiles.escribirFicheroLog(Program.texto);
-
+                            op.crearPedido();
                             cerrarMenu = true;
                             break;
                         case 2:
@@ -131,7 +131,7 @@ namespace ex3ºRecuperacionC_.servicios
                         case 2:
                             Program.texto = "Se ha seleccionado Cálculo total de ventas diario";
                             utiles.Utiles.escribirFicheroLog(Program.texto);
-
+                            op.calculoTotalVentas();
                             cerrarMenu = true;
                             break;
                     }
