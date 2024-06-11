@@ -13,6 +13,7 @@ namespace ex3ºRecuperacionC_
         public static List<Productos> listaProducto = new List<Productos>();
         public static string texto = "";
         public static string rutaLog = utiles.Utiles.nombreFicheroLog();
+        public static string rutaFichero = utiles.Utiles.nombreFicheroVentas();
         /// <summary>
         /// Contiene el procedimiento de la aplicacion
         /// msm - 100624

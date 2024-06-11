@@ -87,12 +87,23 @@ namespace ex3ºRecuperacionC_.servicios
 
             TimeSpan fechaIntervalo = fechaFin - fechaInicio;
 
-            Console.WriteLine(String.Concat("Total ventas: ", importeTotal, "euros","\n","Tiempo transcurrido: ", fechaIntervalo.Hours,"horas ",fechaIntervalo.Minutes,"minutos y ", fechaIntervalo.Seconds, "segundos"));
+            Console.WriteLine(String.Concat("Total ventas: ", importeTotal, " euros","\n","Tiempo transcurrido: ", fechaIntervalo.Hours," horas ",fechaIntervalo.Minutes," minutos y ", fechaIntervalo.Seconds, " segundos"));
         }
 
         public void mostrarVentas()
         {
+            OperacionFicheroInterfaz op = new OperacionFicheroImplementacion();
+            Console.WriteLine("Inserte fecha de las ventas dd-MM-yyyy.");
+            DateTime fecha = Convert.ToDateTime(Console.ReadLine());
+            foreach (Ventas venta in Program.listaVentas)
+            {
+                if (venta.FechaVenta.Date == fecha.Date)
+                {
+                    op.escribirFicheroVenta(venta);
+                }
+            }
 
+            Console.WriteLine("SE HA GENERADO UN FICHERO CON LAS VENTAS");
         }
     }
 }

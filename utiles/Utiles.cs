@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ex3ºRecuperacionC_.dtos;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -24,6 +25,16 @@ namespace ex3ºRecuperacionC_.utiles
             return rutaLog;
         }
 
+        public static string nombreFicheroVentas()
+        {
+            string nombre = "C:\\Users\\Usuario\\Desktop\\ARCHIVOS\\Ventas";
+            DateTime fecha = DateTime.Now;
+            string fechaString = fecha.ToString("ddMMyyyy");
+            string rutaFichero = string.Concat(nombre,fechaString, ".txt");
+
+            return rutaFichero;
+        }
+
         public static void escribirFicheroLog(string texto) 
         {
             string rutaLog = Program.rutaLog;
@@ -34,6 +45,7 @@ namespace ex3ºRecuperacionC_.utiles
             }
 
         }
+
 
         public static long idGenerator()
         {

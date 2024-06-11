@@ -89,7 +89,7 @@ namespace ex3ºRecuperacionC_.servicios
                         case 2:
                             Program.texto = "Se ha seleccionado mostrar ventas del día";
                             utiles.Utiles.escribirFicheroLog(Program.texto);
-
+                            op.mostrarVentas();
                             cerrarMenu = true;
                             break;
                     }
