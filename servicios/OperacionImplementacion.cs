@@ -25,7 +25,7 @@ namespace ex3ºRecuperacionC_.servicios
             foreach (Ventas ventas in Program.listaVentas)
             {
                 Console.WriteLine(" ");
-                Console.WriteLine(venta.ToString());
+                Console.WriteLine(ventas.ToString());
                 Console.WriteLine(" ");
             }
         }

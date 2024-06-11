@@ -67,28 +67,30 @@ namespace ex3ºRecuperacionC_.servicios
         {
             int opcionMenu;
             bool cerrarMenu = false;
+            OperacionFicheroInterfaz of = new OperacionFicheroImplementacion();
 
             do
             {
                 try
                 {
+                    
                     opcionMenu = mostrarMenu1();
                     switch (opcionMenu)
                     {
                         case 0:
                             Program.texto = "Cerrando Menu";
-                            utiles.Utiles.escribirFicheroLog(Program.texto);
+                            of.escribirFicheroLog(Program.texto);
                             cerrarMenu = true;
                             break;
                         case 1:
                             Program.texto = "Se ha seleccionado crear pedido para proveedores";
-                            utiles.Utiles.escribirFicheroLog(Program.texto);
+                            of.escribirFicheroLog(Program.texto);
                             op.crearPedido();
                             cerrarMenu = true;
                             break;
                         case 2:
                             Program.texto = "Se ha seleccionado mostrar ventas del día";
-                            utiles.Utiles.escribirFicheroLog(Program.texto);
+                            of.escribirFicheroLog(Program.texto);
                             op.mostrarVentas();
                             cerrarMenu = true;
                             break;
@@ -97,7 +99,7 @@ namespace ex3ºRecuperacionC_.servicios
                 catch (Exception e)
                 {
                     string texto = string.Concat("ERROR[]: ", e);
-                    utiles.Utiles.escribirFicheroLog(texto);
+                    of.escribirFicheroLog(texto);
                 }
 
             } while (!cerrarMenu);
@@ -109,6 +111,7 @@ namespace ex3ºRecuperacionC_.servicios
 
             int opcionMenu;
             bool cerrarMenu = false;
+            OperacionFicheroInterfaz of = new OperacionFicheroImplementacion();
 
             do
             {
@@ -120,17 +123,17 @@ namespace ex3ºRecuperacionC_.servicios
                         case 0:
                             cerrarMenu = true;
                             Program.texto = "Cerrando Menu";
-                            utiles.Utiles.escribirFicheroLog(Program.texto);
+                            of.escribirFicheroLog(Program.texto);
                             break;
                         case 1:
                             Program.texto = "Se ha seleccionado Añadir venta";
-                            utiles.Utiles.escribirFicheroLog(Program.texto);
+                            of.escribirFicheroLog(Program.texto);
                             op.añadirVentas();
                             cerrarMenu = true;
                             break;
                         case 2:
                             Program.texto = "Se ha seleccionado Cálculo total de ventas diario";
-                            utiles.Utiles.escribirFicheroLog(Program.texto);
+                            of.escribirFicheroLog(Program.texto);
                             op.calculoTotalVentas();
                             cerrarMenu = true;
                             break;
@@ -139,7 +142,7 @@ namespace ex3ºRecuperacionC_.servicios
                 catch (Exception e)
                 {
                     string texto = string.Concat("ERROR[]: ", e);
-                    utiles.Utiles.escribirFicheroLog(texto);
+                    of.escribirFicheroLog(texto);
                 }
 
             } while (!cerrarMenu);

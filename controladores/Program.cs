@@ -21,12 +21,16 @@ namespace ex3ºRecuperacionC_
         /// <param name="args"></param>
         public static void Main(string[] args) 
         {
+            
             //OBJETOS
             MenuInterfaz mi = new MenuImplementacion();
+            OperacionFicheroInterfaz of = new OperacionFicheroImplementacion();
 
             //VARIABLES
             int opcionMenu;
             bool cerrarMenu=false;
+
+            of.caargaInical();
 
             do
             {
@@ -38,16 +42,16 @@ namespace ex3ºRecuperacionC_
                         case 0:
                             cerrarMenu = true;
                             texto = "Cerrando Menu";
-                            utiles.Utiles.escribirFicheroLog(texto);
+                            of.escribirFicheroLog(texto);
                             break;
                         case 1:
                             texto = "Abriendo menu gerenete";
-                            utiles.Utiles.escribirFicheroLog(texto);
+                            of.escribirFicheroLog(texto);
                             mi.menu1();
                             break;
                         case 2:
                             texto = "Abriendo menu empleado";
-                            utiles.Utiles.escribirFicheroLog(texto);
+                            of.escribirFicheroLog(texto);
                             mi.menu2();
                             break;
                     }
@@ -55,7 +59,7 @@ namespace ex3ºRecuperacionC_
                 catch (Exception e)
                 {
                     string texto = string.Concat("ERROR[]: ",e);
-                    utiles.Utiles.escribirFicheroLog(texto);
+                    of.escribirFicheroLog(texto);
                 }
 
             } while (!cerrarMenu);

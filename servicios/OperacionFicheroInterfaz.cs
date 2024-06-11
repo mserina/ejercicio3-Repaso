@@ -19,5 +19,18 @@ namespace ex3ºRecuperacionC_.servicios
         /// </summary>
         /// <param name="venta"></param>
         public void escribirFicheroVenta(Ventas venta);
+
+        /// <summary>
+        /// Escribe en el fichero log
+        /// msm - 110624
+        /// </summary>
+        /// <param name="texto"></param>
+        public void escribirFicheroLog(string texto);
+
+        /// <summary>
+        /// Carga las ventas del fichero
+        /// msm - 110624
+        /// </summary>
+        public void caargaInical();
     }
 }

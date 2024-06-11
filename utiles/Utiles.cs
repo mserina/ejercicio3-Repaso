@@ -17,7 +17,7 @@ namespace ex3ºRecuperacionC_.utiles
 
         public static string nombreFicheroLog()
         {
-            string nombre = "C:\\Users\\Usuario\\Desktop\\ARCHIVOS\\log-";
+            string nombre = "C:\\Users\\csi23-mserina\\Desktop\\FICHEROS\\log-";
             DateTime fecha = DateTime.Now;
             string fechaString = fecha.ToString("ddMMyyyy");
             string rutaLog = string.Concat(nombre, fechaString, ".txt");
@@ -27,7 +27,7 @@ namespace ex3ºRecuperacionC_.utiles
 
         public static string nombreFicheroVentas()
         {
-            string nombre = "C:\\Users\\Usuario\\Desktop\\ARCHIVOS\\Ventas";
+            string nombre = "C:\\Users\\csi23-mserina\\Desktop\\FICHEROS\\Ventas";
             DateTime fecha = DateTime.Now;
             string fechaString = fecha.ToString("ddMMyyyy");
             string rutaFichero = string.Concat(nombre,fechaString, ".txt");
@@ -35,26 +35,15 @@ namespace ex3ºRecuperacionC_.utiles
             return rutaFichero;
         }
 
-        public static void escribirFicheroLog(string texto) 
-        {
-            string rutaLog = Program.rutaLog;
-            StreamWriter sw;
-            using (sw = new StreamWriter(rutaLog, true))
-            {
-                sw.Write(string.Concat(texto, "\n"));
-            }
-
-        }
-
 
         public static long idGenerator()
         {
             long idNuevo = 0;
-            int listaTamano = Program.listaVentas.Count -1;
+            int listaTamano = Program.listaVentas.Count;
 
-            if (listaTamano > 0)
+            if (listaTamano >= 1)
             {
-                idNuevo = Program.listaVentas[listaTamano].Id + 1;
+                idNuevo = Program.listaVentas[listaTamano -1].Id + 1;
             }
             else
             {

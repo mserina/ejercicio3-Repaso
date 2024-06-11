@@ -24,7 +24,8 @@ namespace ex3ºRecuperacionC_.dtos
         public string ToString()
         {
             string fechaString = fechaVenta.ToString("dd-MM-yyyy");
-            string texto =
+            string texto = string.Concat(id,";",importe, ";",fechaString,"\n");
+                /*
                 string.Concat(
                     "………\n",
                     "Venta numero: ", id,"\n",
@@ -32,6 +33,7 @@ namespace ex3ºRecuperacionC_.dtos
                     "Instante de compra: ", fechaString, "\n"
 
                     );
+                */
 
             return texto;
         }
